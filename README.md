@@ -4,7 +4,7 @@
  [GIF Decor](#GIF Decor) |
  --- |
 
-##GIF Decor
+## GIF Decor
 
 <img src="https://github.com/CodeSmore/AR-Minis/blob/main/Images/GIF%20Decor%20Demo.gif" width="300">
 
