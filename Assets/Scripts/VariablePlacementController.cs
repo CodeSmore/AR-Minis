@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Rudimentary implementation to enable spawning different objects.
+// Cycles through options linearly
 public class VariablePlacementController : MonoBehaviour
 {
     [SerializeField] List<GameObject> placementPrefabs;
@@ -18,7 +20,7 @@ public class VariablePlacementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (placementIndicator != null && placementIndicator.activeInHierarchy && Input.touchCount > 0)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
@@ -27,7 +29,7 @@ public class VariablePlacementController : MonoBehaviour
                 // cycle through index if reached the final one, otherwise, increment
                 placementPrefabIndex = (placementPrefabIndex >= placementPrefabs.Count - 1 ? 0 : ++placementPrefabIndex);
 
-                PlaceObjectsOnPlane.InvokeOnPlacedObject();
+                ResultOfObjectPlacedOnPlane.InvokeOnPlacedObject();
             }
         }
     }

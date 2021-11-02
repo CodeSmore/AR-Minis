@@ -188,7 +188,7 @@ public class UIManager : MonoBehaviour
     {
         ARUXAnimationManager.onFadeOffComplete += FadeComplete;
 
-        PlaceObjectsOnPlane.onPlacedObject += () => m_PlacedObject = true;
+        ResultOfObjectPlacedOnPlane.onPlacedObject += () => m_PlacedObject = true;
 
         GetManagers();
         m_UXOrderedQueue = new Queue<UXHandle>();
