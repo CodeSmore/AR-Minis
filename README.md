@@ -5,7 +5,8 @@
  --- |
 
 ##GIF Decor
-<img src="https://github.com/CodeSmore/AR-Minis/blob/main/Images/GIF%20Decor%20Demo.gif" width="420">
+
+<img src="https://github.com/CodeSmore/AR-Minis/blob/main/Images/GIF%20Decor%20Demo.gif" width="300">
 
 Post Gifs around the room! 
 
