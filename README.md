@@ -1,12 +1,11 @@
 # CodeSmore AR Minis
  Small AR projects I made to test things out and for fun!
  
- [GIF Decor](#GIF Decor)
- ----------
+ [GIF Decor](#GIF Decor) |
+ --- |
 
 ##GIF Decor
-
-// GIF Demo here
+![img](https://github.com/CodeSmore/AR-Minis/blob/main/Images/GIF%20Decor%20Demo.gif)
 
 Post Gifs around the room! 
 
