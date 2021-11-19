@@ -1,7 +1,7 @@
 # CodeSmore AR Minis
  Small AR projects I made to test things out and for fun!
 
-[GIF Decor] | [Topple Blocks]
+[GIF Decor](#gif-decor) | [Topple Blocks](#topple-blocks)
 ------------ | ------------- 
 
 ## GIF Decor
@@ -27,4 +27,4 @@ https://user-images.githubusercontent.com/15611558/142653440-206b3a85-f393-49fb-
 This looks like a simple use of physics in AR Foundation. 
 BUT DON'T LET THAT FOOL YOU!
 
-A lot of small techniques are put into this, including utilizing SessionOrigin scaling (if you scale objects instead, the physics gets very weird xD), the Universal Render Pipeline (URP) for plane shadows, object pooling for ammo & particle effects, my first use of UI Toolkit, HDR lighting based on real-world lighting, and more!
+A lot of small techniques are put into this, including utilizing SessionOrigin scaling (if you scale objects instead, the physics gets very weird xD), the Universal Render Pipeline (URP) for plane shadows, material manipulation, object pooling for ammo & particle effects, my first use of UI Toolkit, HDR lighting based on real-world lighting, and more!
