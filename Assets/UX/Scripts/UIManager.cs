@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
         FindAnImage,
         FindAnObject,
         ARKitCoachingOverlay,
+        SwipeToScale,
         TapToPlace,
         None
     };
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
         FoundABody,
         FoundAnImage,
         FoundAnObject,
+        SwipedToScale,
         PlacedAnObject,
         None
     };
@@ -96,6 +98,33 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
+    bool m_ShowTertiaryInstructionalUI;
+
+    public bool showTertiaryInstructionalUI
+    {
+        get => m_ShowTertiaryInstructionalUI;
+        set => m_ShowTertiaryInstructionalUI = value;
+    }
+
+    [SerializeField]
+    InstructionUI m_TertiaryInstructionUI = InstructionUI.TapToPlace;
+
+    public InstructionUI tertiaryInstructionUI
+    {
+        get => m_TertiaryInstructionUI;
+        set => m_TertiaryInstructionUI = value;
+    }
+
+    [SerializeField]
+    InstructionGoals m_TertiaryGoal = InstructionGoals.PlacedAnObject;
+
+    public InstructionGoals tertiaryGoal
+    {
+        get => m_TertiaryGoal;
+        set => m_TertiaryGoal = value;
+    }
+
+    [SerializeField]
     [Tooltip("Fallback to cross platform UI if ARKit coaching overlay is not supported")]
     bool m_CoachingOverlayFallback;
 
@@ -121,6 +150,7 @@ public class UIManager : MonoBehaviour
     UXHandle m_CurrentHandle;
     bool m_ProcessingInstructions;
     bool m_PlacedObject;
+    bool m_SwipedToScale;
 
     [SerializeField]
     ARPlaneManager m_PlaneManager;
@@ -173,6 +203,15 @@ public class UIManager : MonoBehaviour
         set => m_AnimationManager = value;
     }
 
+    [SerializeField]
+    SwipeManager m_SwipeManager;
+
+    public SwipeManager swipeManager
+    {
+        get => m_SwipeManager;
+        set => m_SwipeManager = value;
+    }
+
     bool m_FadedOff = false;
     
     [SerializeField]
@@ -188,7 +227,8 @@ public class UIManager : MonoBehaviour
     {
         ARUXAnimationManager.onFadeOffComplete += FadeComplete;
 
-        ResultOfObjectPlacedOnPlane.onPlacedObject += () => m_PlacedObject = true;
+        PlaceObjectsOnPlane.onPlacedObject += () => m_PlacedObject = true;
+        SwipeManager.onSwipeDetected += () => m_SwipedToScale = (m_CurrentHandle.Goal == InstructionGoals.SwipedToScale ? true : false);
 
         GetManagers();
         m_UXOrderedQueue = new Queue<UXHandle>();
@@ -201,6 +241,11 @@ public class UIManager : MonoBehaviour
         if (m_ShowSecondaryInstructionalUI)
         {
             m_UXOrderedQueue.Enqueue(new UXHandle(m_SecondaryInstructionUI, m_SecondaryGoal));
+        }
+
+        if (m_ShowTertiaryInstructionalUI)
+        {
+            m_UXOrderedQueue.Enqueue(new UXHandle(m_TertiaryInstructionUI, m_TertiaryGoal));
         }
     }
 
@@ -308,6 +353,9 @@ public class UIManager : MonoBehaviour
             case InstructionGoals.PlacedAnObject:
                 return PlacedObject;
 
+            case InstructionGoals.SwipedToScale:
+                return SwipedToScale;
+
             case InstructionGoals.None:
                 return () => false;
         }
@@ -358,6 +406,10 @@ public class UIManager : MonoBehaviour
                 m_AnimationManager.ShowTapToPlace();
                 break;
 
+            case InstructionUI.SwipeToScale:
+                m_AnimationManager.ShowFindSwipe();
+                break;
+
             case InstructionUI.None:
 
                 break;
@@ -390,6 +442,17 @@ public class UIManager : MonoBehaviour
             return true;
         }
         return m_PlacedObject;
+    }
+
+    bool SwipedToScale()
+    {
+        // reset flag to be used multiple times
+        if (m_SwipedToScale)
+        {
+            m_SwipedToScale = false;
+            return true;
+        }
+        return m_SwipedToScale;
     }
 
     public void AddToQueue(UXHandle uxHandle)

@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] Button GifDecorButton;
+    [SerializeField] Button[] buttons;
 
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        GifDecorButton.onClick.AddListener(delegate { LoadScene(); });
+        foreach (Button button in buttons) {
+            button.onClick.AddListener(delegate { LoadScene(button.name); });
+        }
     }
 
-    void LoadScene()
+    void LoadScene(string name)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(name);
     }
 }

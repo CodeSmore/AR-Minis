@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" ml="UnityEditor.XR.MagicLeap" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="/Assets/USS/style-sheet.uss" />
+    <ui:VisualElement name="background" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="fire-ui" style="flex-grow: 1; flex-direction: row; display: flex;">
+            <ui:VisualElement name="background-align-left-bottom" style="flex-grow: 1; position: relative; width: 50%; height: 100%; align-items: flex-start; justify-content: flex-end; overflow: hidden; visibility: visible; flex-direction: column;">
+                <ui:Button text="Reset" display-tooltip-when-elided="true" name="reset-button" class="auto-fire-button-off" style="justify-content: flex-start; align-items: auto; left: auto; top: auto; opacity: 1; font-size: 31px; width: 90%; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; flex-grow: 0; position: relative; display: flex; visibility: visible; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="background-align-right-bottom" style="flex-grow: 1; align-items: flex-end; justify-content: flex-end; position: relative; flex-direction: column; width: 50%; height: 100%;">
+                <ui:Button text="Auto Fire" display-tooltip-when-elided="true" name="auto-fire-button-on" class="auto-fire-button-on" style="justify-content: flex-start; align-items: auto; left: auto; top: auto; opacity: 1; font-size: 31px; width: 90%; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; flex-grow: 0; position: absolute; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px;" />
+                <ui:Button text="Auto Fire" display-tooltip-when-elided="true" name="auto-fire-button-off" class="auto-fire-button-off" style="justify-content: flex-start; align-items: auto; left: auto; top: auto; opacity: 1; font-size: 31px; width: 90%; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; flex-grow: 0; position: absolute; display: flex; visibility: visible;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="set-height-ui" style="flex-grow: 1; flex-direction: row; display: flex; visibility: visible; justify-content: center; align-items: flex-end;">
+            <ui:Button text="Set Height" display-tooltip-when-elided="true" name="set-height-button" class="auto-fire-button-off" style="justify-content: flex-start; align-items: auto; left: auto; top: auto; opacity: 1; font-size: 31px; width: 174px; border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; flex-grow: 0; position: absolute; display: flex; visibility: visible; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; padding-left: 12px; padding-right: 12px; padding-top: 10px; padding-bottom: 10px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

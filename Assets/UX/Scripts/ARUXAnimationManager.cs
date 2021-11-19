@@ -89,12 +89,25 @@ public class ARUXAnimationManager : MonoBehaviour
     VideoClip m_FindFaceClip;
     
     /// <summary>
-    /// Get the <c>Find face iamge</c>
+    /// Get the <c>Find face image</c>
     /// </summary>
     public VideoClip findFaceClip
     {
         get => m_FindFaceClip;
         set => m_FindFaceClip = value;
+    }
+
+    [SerializeField]
+    [Tooltip("Find swipe animation")]
+    VideoClip m_FindSwipeClip;
+
+    /// <summary>
+    /// Get the <c>Find swipe Clip</c>
+    /// </summary>
+    public VideoClip findSwipeClip
+    {
+        get => m_FindSwipeClip;
+        set => m_FindSwipeClip = value;
     }
 
     [SerializeField]
@@ -156,6 +169,7 @@ public class ARUXAnimationManager : MonoBehaviour
     const string k_FindAFaceText = "Find a Face to Track";
     const string k_FindClipText = "Find an Image to Track";
     const string k_FindObjectText = "Find an Object to Track";
+    const string k_SwipeToScaleText = "Swipe to Rescale Object";
 
     public static event Action onFadeOffComplete;
 
@@ -328,6 +342,21 @@ public class ARUXAnimationManager : MonoBehaviour
         {
             m_InstructionText.text = k_FindAFaceText;
         }
+        m_FadeOn = true;
+    }
+
+    public void ShowFindSwipe()
+    {
+        m_VideoPlayer.clip = m_FindSwipeClip;
+        m_VideoPlayer.Play();
+        //if (m_LocalizeText)
+        //{
+        //    m_InstructionText.text = m_LocalizationManager.localizedSwipe;
+        //}
+        //else
+        //{
+        m_InstructionText.text = k_SwipeToScaleText;
+        //}
         m_FadeOn = true;
     }
 

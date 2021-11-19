@@ -135,6 +135,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenspaceUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5977163238016480456, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
+        type: 3}
+      propertyPath: m_FindSwipeClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 71d5f88a258b9466cb4b8d615fc10c8e,
+        type: 3}
     - target: {fileID: 5977163238016480458, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
         type: 3}
       propertyPath: m_PlaneManager
@@ -142,9 +148,19 @@ PrefabInstance:
       objectReference: {fileID: 1575641313}
     - target: {fileID: 5977163238016480458, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
         type: 3}
+      propertyPath: m_SecondaryGoal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977163238016480458, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
+        type: 3}
       propertyPath: m_ARSessionOrigin
       value: 
       objectReference: {fileID: 1575641309}
+    - target: {fileID: 5977163238016480458, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
+        type: 3}
+      propertyPath: m_SecondaryInstructionUI
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5977163238016480459, guid: 29251f2f7c5044cce8e7eb862b4d93ef,
         type: 3}
       propertyPath: m_RootOrder
@@ -547,7 +563,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575641309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446fc7fee4cf2ad4daa02222a84869c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de8a31d7c8d34756bc893286b5f85e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1667925279

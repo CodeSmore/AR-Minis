@@ -1,0 +1,27 @@
+.auto-fire-button-off {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.auto-fire-button-off:active {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+    background-color: rgba(0, 224, 23, 255);
+}
+
+.auto-fire-button-on {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(0, 255, 0, 255);
+}
+
+.auto-fire-button-on:active {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(255, 0, 0, 255);
+}

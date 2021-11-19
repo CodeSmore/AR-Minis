@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GIF Decor.unity
     guid: a0966cbd664ab4055a7e1393b8459e28
+  - enabled: 1
+    path: Assets/_Scenes/Topple Blocks.unity
+    guid: c192a852d32c44998920d6fd459e08ce
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

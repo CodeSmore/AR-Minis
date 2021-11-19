@@ -34,6 +34,11 @@ public class AnchorCreator : MonoBehaviour
         m_AnchorPoints.Clear();
     }
 
+    public int GetAnchorCount()
+    {
+        return m_AnchorPoints.Count;
+    }
+
     // On Awake(), we obtains a reference to all the required components.
     // The ARRaycastManager allows us to perform raycasts so that we know where to place an anchor.
     // The ARPlaneManager detects surfaces we can place our objects on.
@@ -69,7 +74,6 @@ public class AnchorCreator : MonoBehaviour
             // This prefab instance is parented to the anchor to make sure the position of the prefab is consistent
             // with the anchor, since an anchor attached to an ARPlane will be updated automatically by the ARAnchorManager as the ARPlane's exact position is refined.
             var anchor = m_AnchorManager.AttachAnchor(hitPlane, hitPose);
-
             Instantiate(m_AnchorPrefab, anchor.transform);
 
             if (anchor == null)
